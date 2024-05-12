@@ -10,10 +10,16 @@ const Login = () => {
             <input type="email" id="email" placeholder="Your email"/>
             <label htmlFor="password">Password</label>
             <input type="password" id="password" placeholder="Your password"/>
-            <button className="login__button">
-                <Link to="/" className="login__button_link">Login</Link>
-            </button>
-            <Link to="/registration" className="login__link">You are not registred?</Link>
+            <div className="login__buttons">
+                <button className="login__buttons_sign">
+                    <Link to="/">Sign in</Link>
+                </button>
+                <button className="login__buttons_question">
+                    <Link to="/registration">You are not registred?</Link>
+                </button>
+            </div>
+            
+            <Link to="/restorePassword" className="login__link">Forgot password?</Link>
         </div>
     )
 };
