@@ -3,15 +3,17 @@ import {App} from './App'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { LazyRestore } from './pages/Restore/Restore.lazy'
 import { LazyAddServer } from './pages/AddServer/AddServer.lazy'
-import { LazyAddServer2 } from './pages/AddServer/AddServer2.lazy'
-import { LazyAddServer3 } from './pages/AddServer/AddServer3.lazy'
-import { LazyAddServer4 } from './pages/AddServer/AddServer4.lazy'
-import { LazyAddServer5 } from './pages/AddServer/AddServer5.lazy'
+import { LazyAddServerTwo } from './pages/AddServerTwo/AddServerTwo.lazy'
+import { LazyAddServerThree } from './pages/AddServerThree/AddServerThree.lazy'
+import { LazyAddServerFour } from './pages/AddServerFour/AddServerFour.lazy'
+import { LazyAddServerFive } from './pages/AddServerFive/AddServerFive.lazy'
 import { Suspense } from 'react'
 import Registration from './pages/Registration/Registration'
 import { LazyRegistration } from './pages/Registration/Registration.lazy'
 import { LazyLogin } from './pages/Login/Login.lazy'
 import './App.scss'
+import { LazyServerPage } from './pages/ServerPage/ServerPage.lazy'
+
 
 const root = document.getElementById('root')
 
@@ -40,27 +42,27 @@ const router = createBrowserRouter([
   },
   {
     path: "/server/:id",
-    element: <Suspense fallback={'loading'}><h1>server</h1></Suspense>,
+    element: <Suspense fallback={'loading'}><LazyServerPage/></Suspense>,
   },
   {
     path: "/addServer",
     element: <Suspense fallback={'loading'}><LazyAddServer/></Suspense>,
   },
   {
-    path: "/addServer/2",
-    element: <Suspense fallback={'loading'}><LazyAddServer2/></Suspense>,
+    path: "/addServerTwo",
+    element: <Suspense fallback={'loading'}><LazyAddServerTwo/></Suspense>,
   },
   {
-    path: "/addServer/3",
-    element: <Suspense fallback={'loading'}><LazyAddServer3/></Suspense>,
+    path: "/addServerThree",
+    element: <Suspense fallback={'loading'}><LazyAddServerThree/></Suspense>,
   },
   {
-    path: "/addServer/4",
-    element: <Suspense fallback={'loading'}><LazyAddServer4/></Suspense>,
+    path: "/addServerFour",
+    element: <Suspense fallback={'loading'}><LazyAddServerFour/></Suspense>,
   },
   {
-    path: "/addServer/5",
-    element: <Suspense fallback={'loading'}><LazyAddServer5/></Suspense>,
+    path: "/addServerFive",
+    element: <Suspense fallback={'loading'}><LazyAddServerFive/></Suspense>,
   },
   {
     path: "/*",

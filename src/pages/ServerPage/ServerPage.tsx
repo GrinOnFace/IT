@@ -4,7 +4,7 @@ import Explorer from "../../assets/images/explorer.svg"
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 
-const AddServer = () => {
+const ServerPage = () => {
     const navigate = useNavigate()
 
     return (
@@ -25,23 +25,10 @@ const AddServer = () => {
               </ul>
             </nav>
             <section className="app__container_add">
-              <header>
-                <span>1/5</span>
-                <h2>Подключение нового сервера</h2>
-              </header>
-              <article>
-                <label htmlFor="name">Название</label>
-                <input type="text" id="name" placeholder="My server"/>
-                <label htmlFor="description">Описание</label>
-                <textarea name="text" id="description"></textarea>
-                <Link to="/addServerTwo">
-                  <button>Следующий шаг</button>
-                </Link>
-              </article>
             </section>
           </div>
         </main>
     )
 };
 
-export default AddServer
+export default ServerPage

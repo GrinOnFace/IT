@@ -4,7 +4,7 @@ import Explorer from "../../assets/images/explorer.svg"
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 
-const AddServer = () => {
+const AddServerFour = () => {
     const navigate = useNavigate()
 
     return (
@@ -26,15 +26,13 @@ const AddServer = () => {
             </nav>
             <section className="app__container_add">
               <header>
-                <span>1/5</span>
+                <span>4/5</span>
                 <h2>Подключение нового сервера</h2>
               </header>
               <article>
-                <label htmlFor="name">Название</label>
-                <input type="text" id="name" placeholder="My server"/>
-                <label htmlFor="description">Описание</label>
-                <textarea name="text" id="description"></textarea>
-                <Link to="/addServerTwo">
+                <label htmlFor="SentryURL">Sentry URL</label>
+                <input type="text" id="SentryURL" placeholder="https://bmstu-on.sentry.io/issues/"/>
+                <Link to="/addServerFive">
                   <button>Следующий шаг</button>
                 </Link>
               </article>
@@ -44,4 +42,4 @@ const AddServer = () => {
     )
 };
 
-export default AddServer
+export default AddServerFour
