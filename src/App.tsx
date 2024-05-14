@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import { observer } from "mobx-react";
 
-const MainSection = () => {
+const MainSection = observer(() => {
   const navigate = useNavigate()
 
   return (
@@ -40,7 +41,7 @@ const MainSection = () => {
       </article>
     </section>
   )
-};
+});
 
 export const App = () => {
   const location = useLocation()

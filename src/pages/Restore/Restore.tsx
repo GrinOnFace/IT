@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from 'react';
 import Tantalum from "../../assets/images/TANTALUM.png"
 import { Link } from "react-router-dom";
+import { Context } from '../..';
 
 const Restore = () => {
+
     return (
         <div className="restore">
             <img src={Tantalum} alt="Tantalum" className="restore__img"/>

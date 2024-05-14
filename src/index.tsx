@@ -12,7 +12,8 @@ import { LazyRegistration } from './pages/Registration/Registration.lazy'
 import { LazyLogin } from './pages/Login/Login.lazy'
 import './App.scss'
 import { LazyServerPage } from './pages/ServerPage/ServerPage.lazy'
-
+import store from './store/store'
+import React, { useState } from "react";
 
 
 const root = document.getElementById('root')
@@ -70,6 +71,15 @@ const router = createBrowserRouter([
   }
 ])
 
+export const Context = React.createContext({
+  store,
+})
+
 container.render(
-  <RouterProvider router={router} />
+  <Context.Provider value={{
+    store
+  }}>
+    <RouterProvider router={router} />
+  </Context.Provider>,
+
 )
