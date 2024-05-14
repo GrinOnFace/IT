@@ -6,10 +6,10 @@ const Login = () => {
     return (
         <div className="login">
             <img src={Tantalum} alt="Tantalum" className="login__img"/>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Your email"/>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="Your password"/>
+            <label className="login__label" htmlFor="email">Email</label>
+            <input className="login__input" type="email" id="email" placeholder="Your email"/>
+            <label className="login__label" htmlFor="password">Password</label>
+            <input className="login__input" type="password" id="password" placeholder="Your password"/>
             <div className="login__buttons">
                 <button className="login__buttons_sign">
                     <Link to="/">Sign in</Link>

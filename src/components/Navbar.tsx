@@ -1,43 +1,48 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Tantalum from "../assets/images/TANTALUM.png"
-import Notification from "../assets/images/notification.svg"
-import Setting from "../assets/images/settings.svg"
-import Logout from "../assets/images/login.svg"
+import TantalumLogo from "../assets/images/TANTALUM.png";
+import NotificationIcon from "../assets/images/notification.svg";
+import SettingsIcon from "../assets/images/settings.svg";
+import LogoutIcon from "../assets/images/login.svg";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const [name, setName] = useState("Девопсер Девопсерский");
-    const [role, setRole] = useState("Developer");
+    const [userName, setUserName] = useState("Девопсер Девопсерский");
+    const [userRole, setUserRole] = useState("Developer");
 
     return (
-        <header className="app__header">
-            <img src={Tantalum} alt="Tantalum" className="app__header_img" onClick={() => navigate('/')}/>
-            <div className="app__header_buttons">
-              <Link to={"/#"}>
-                <button className="app__header_buttons_info">
-                  <Notification width={"20px"} height={"20px"}/>
-                </button>
-              </Link>
-              <Link to={"/#"}>
-                <button className="app__header_buttons_settings">
-                  <Setting width={"20px"} height={"20px"} />
-                </button>
-              </Link>
-              <div className="app__header_user">
-                <h5>{name}</h5>
-                <p>{role}</p>
-              </div>
-              <Link to={"/login"}>
-                <button className="app__header_buttons_logout">
-                  <Logout width={"20px"} height={"20px"} />
-                </button>
-              </Link> 
+        <header className="navbar">
+            <img
+                src={TantalumLogo}
+                alt="Tantalum"
+                className="navbar__logo"
+                onClick={() => navigate('/')}
+            />
+            <div className="navbar__actions">
+                <Link to={"/notifications"}>
+                    <button className="navbar__action">
+                        <NotificationIcon width={"20px"} height={"20px"} />
+                    </button>
+                </Link>
+                <Link to={"/settings"}>
+                    <button className="navbar__action">
+                        <SettingsIcon width={"20px"} height={"20px"} />
+                    </button>
+                </Link>
+                <div className="navbar__user">
+                    <h5 className="navbar__user-name">{userName}</h5>
+                    <p className="navbar__user-role">{userRole}</p>
+                </div>
+                <Link to={"/login"}>
+                    <button className="navbar__action">
+                        <LogoutIcon width={"20px"} height={"20px"} />
+                    </button>
+                </Link>
             </div>
-          </header>
-    )
+        </header>
+    );
 };
 
-export default Navbar
+export default Navbar;

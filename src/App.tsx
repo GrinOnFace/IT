@@ -1,83 +1,57 @@
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
-import TANTALUM from "../src/assets/images/TANTALUM.png"
-import Notification from "../src/assets/images/notification.svg"
-import Setting from "../src/assets/images/settings.svg"
-import Logout from "../src/assets/images/login.svg"
-import Explorer from "../src/assets/images/explorer.svg"
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+
+const MainSection = () => {
+  const navigate = useNavigate()
+
+  return (
+    <section className="app__container__main">
+      <header className="app__header">
+        <h2 className="app__title">Ваши сервера</h2>
+        <Link to={"/addServer"} className="app__add-server">
+          <button>+ Add server</button>
+        </Link>
+      </header>
+      <article className="app__article">
+        <nav className="app__nav">
+          <ul className="app__server-list">
+            {[1, 2, 3].map((serverId) => (
+              <li key={serverId} className="app__server-item">
+                <button className="app__server" onClick={() => navigate(`/server/${serverId}`)}>
+                  <span className="app__server-name">My server #{serverId}</span>
+                  <div className="app__server-state">
+                    <div className="app__server-state-box"></div>
+                    <span className="app__server-state-text">Active</span>
+                  </div>
+                </button>
+              </li>
+            ))}
+            <li className="app__server-item">
+              <button className="app__server-add" onClick={() => navigate('/addServer')}>
+                <span>+ Add server</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  )
+};
 
 export const App = () => {
-    const navigate = useNavigate()
-  
-    return (
-        <main className="app">
-          <Navbar/>
-          <div className="app__container">
-            <nav className="app__container_side">
-              <h3>Меню</h3>
-              <ul>
-                <li>
-                  <Link to="/#">
-                    <button>
-                      <Explorer width={"15px"} height={"15px"} style={{paddingRight:"5px"}}/>
-                      Сервера
-                    </button>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-              <section className="app__container_section">
-                <header>
-                  <h2>Ваши сервера</h2>
-                  <Link to={"/addServer"}>
-                    <button>
-                      + Add server
-                    </button>
-                  </Link>
-                </header>
-                <article>
-                  <nav>
-                    <ul className="app__container_section_list">
-                      <li>
-                        <button className="app__container_section_list_button" onClick={() => navigate("/server/5")}>
-                          <span className="app__container_section_list_button_header">My server #1</span>
-                          <div className="app__container_section_list_button_state">
-                            <div className="app__container_section_list_button_state_box"></div>
-                            <span>Active</span>
-                          </div>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="app__container_section_list_button">
-                          <span className="app__container_section_list_button_header">My server #1</span>
-                          <div className="app__container_section_list_button_state">
-                            <div className="app__container_section_list_button_state_box"></div>
-                            <span>Active</span>
-                          </div>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="app__container_section_list_button">
-                          <span className="app__container_section_list_button_header">My server #1</span>
-                          <div className="app__container_section_list_button_state">
-                            <div className="app__container_section_list_button_state_box"></div>
-                            <span>Active</span>
-                          </div>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="app__container_section_list_button_add" onClick={() => navigate('/addServer')}>
-                          <span>+ Add server</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </nav>
-                </article>
-              </section>
-          </div>
-        </main>
-    )
+  const location = useLocation()
+
+  return (
+    <main className="app">
+      <Navbar />
+      <div className="app__container">
+        <Sidebar />
+        <MainSection />
+      </div>
+    </main>
+  );
 };

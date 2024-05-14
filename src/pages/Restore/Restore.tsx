@@ -6,8 +6,8 @@ const Restore = () => {
     return (
         <div className="restore">
             <img src={Tantalum} alt="Tantalum" className="restore__img"/>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Your email"/>
+            <label className="restore__label" htmlFor="email">Email</label>
+            <input className="restore__input" type="email" id="email" placeholder="Your email"/>
             <button className="restore__button">
                 <Link to="/login">Send password</Link>
             </button>
