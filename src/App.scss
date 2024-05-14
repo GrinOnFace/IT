@@ -4,7 +4,6 @@
     src: url("../src/assets/fonts/VK-Sans-Display-font/VKSansDisplay-Regular.ttf") format('truetype');
 }
 
-
 body{
     background-color: #1E1E1E;
     margin: 0;
@@ -417,9 +416,9 @@ body{
                     display: flex;
                     &-button{
                         padding: 0px;
-                        font-size: 20px;
+                        font-size: 18px;
                         font-weight: 500;
-                        margin-right: 15px;
+                        margin-right: 30px;
                         background-color: transparent;
                         color: white;
                         border: none;
@@ -434,6 +433,76 @@ body{
                     }
                     &-title{
                         margin-bottom: 8px;
+                    }
+                }
+                &__notify{
+                    list-style-type: none;
+                    padding: 0;
+                    .notify-item{
+                        width: 600px;
+                        background-color: #202020;
+                        display: flex;
+                        justify-content: space-between;
+                        border-radius: 15px;
+                        margin-bottom: 15px;
+                        &-left{
+                            display: flex;
+                            &-box{
+                                width: 20px;
+                                height: 100%;
+                                border: 1px solid white;
+                                border-radius: 15px;
+                            }
+                            &-name{
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-left: 20px;
+                                margin-bottom: 20px;
+                                margin-top: 20px;
+                            }
+                        }
+                        &-period{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: end;
+                            margin-right: 20px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                &__control{
+                    margin-top: 30px;
+                    &-select{
+                        width: 400px;
+                        height: 30px;
+                        background-color: transparent;
+                        color: white;
+                        border-radius: 10px;
+                        &:focus{
+                            background-color: #1E1E1E;
+                            outline: none;
+                        }
+                    }
+                    &-button {
+                        font-size: 12px;
+                        background-color: #202020;
+                        border: 0;
+                        padding: 12px 20px;
+                        border-radius: 10px;
+                        color: white;
+                        margin-left: 10px;
+                    }
+                }
+                &__docker-table{
+                    thead{
+                        tr{
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                    }
+                    tbody{
+
                     }
                 }
             }

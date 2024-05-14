@@ -5,31 +5,72 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 
+const Table = ({ data }: any) => {
+  return (
+    <table className="server__article__docker-table">
+      <thead>
+        <tr className="server__article__docker-table-row">
+          <th className="server__article__docker-table-header">Containers</th>
+          <th className="server__article__docker-table-header">Status</th>
+          <th className="server__article__docker-table-header">Port</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row: any, index: any) => (
+          <tr key={index} className="server__article__docker-table-row">
+            <td className="server__article__docker-table-cell">{row.column1}</td>
+            <td className="server__article__docker-table-cell">{row.column2}</td>
+            <td className="server__article__docker-table-cell">{row.column3}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
 function Notifications() {
   return (
-    <div>
-      <h1>Уведомления</h1>
-      <p>Содержимое уведомлений...</p>
-    </div>
+    <ul className="server__article__notify">
+      {[1, 2, 3].map((serverId) => (
+        <li key={serverId} className="notify-item">
+          <div className="notify-item-left">
+            <div className="notify-item-left-box"></div>
+            <h5 className="notify-item-left-name">Server Up</h5>
+          </div>
+          <div className="notify-item-period">
+            <span className="notify-item-period-data">05/04/24</span>
+            <span className="notify-item-period-time">18:46</span>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }
 
 function Docker() {
+  const dataFromBackend = [
+    { column1: 'Grafana-1', column2: 'Exited', column3: '9100:9100' },
+    { column1: 'pg-1', column2: 'Exited', column3: '9100:9100' },
+    { column1: 'Node-Exporter', column2: 'Exited', column3: '9100:9100' },
+  ];
+
   return (
-    <div>
-      <h1>Docker</h1>
-      <p>Список задач...</p>
-    </div>
+    <Table data={dataFromBackend} />
   );
 }
 
 function Control() {
   return (
-    <div>
-      <h1>Control</h1>
-    </div>
+    <form className="server__article__control">
+      <select className="server__article__control-select">
+        <option value="Up" className="server__article__control-option">Up</option>
+        <option value="Down" className="server__article__control-option">Down</option>
+      </select>
+      <button className="server__article__control-button">Запустить</button>
+    </form>
   );
 }
+
 
 function Credentials() {
   return (

@@ -14,6 +14,7 @@ import './App.scss'
 import { LazyServerPage } from './pages/ServerPage/ServerPage.lazy'
 
 
+
 const root = document.getElementById('root')
 
 if (!root) {
