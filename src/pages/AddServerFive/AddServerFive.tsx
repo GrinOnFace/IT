@@ -12,16 +12,15 @@ const AddServerFive = () => {
         <main className="app">
           <Navbar/>
           <div className="app__container">
-            <Sidebar/>
-            <section className="app__container_add">
-              <header>
-                <span>5/5</span>
-                <h2>Подключение нового сервера</h2>
+            <Sidebar />
+            <section className="app__container__add">
+              <header className="add__header">
+                <span className="add__header-step">5/5</span>
+                <h2 className="add__header-title">Подключение нового сервера</h2>
               </header>
-              <article>
-                <button>
-                    <Link to="/">Завершить</Link>
-                </button>
+              <article className="add__content">
+                <span className="add__state">Status</span>
+                <button className="add__button">Завершить</button>
               </article>
             </section>
           </div>

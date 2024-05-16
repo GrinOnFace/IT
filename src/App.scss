@@ -357,7 +357,11 @@ body{
                     margin-top: 30px;
                     border-radius: 10px;
                     padding: 10px;
-                    width: 160px;
+                    width: 150px;
+                }
+                .add__state{
+                    font-size: 16px;
+                    margin-top: 20px;
                 }
             }
         }
@@ -495,14 +499,41 @@ body{
                     }
                 }
                 &__docker-table{
+                    color: #ADADAD;
+                    border-collapse: collapse;
                     thead{
                         tr{
                             font-size: 18px;
                             font-weight: 600;
+                            th:nth-child(1){
+                                padding-bottom: 20px;
+                                text-align: start;
+                                width: 250px;
+                            }
+                            th:nth-child(2){
+                                padding-bottom: 20px;
+                                text-align: center;
+                                width: 100px;
+                            }
+                            th:nth-child(3){
+                                padding-bottom: 20px;
+                                text-align: end;
+                                width: 100px;
+                            }
                         }
                     }
                     tbody{
-
+                        td:nth-child(1){
+                            padding-bottom: 20px;
+                        }
+                        td:nth-child(2){
+                            padding-bottom: 20px;
+                            text-align: center;
+                        }
+                        td:nth-child(3){
+                            padding-bottom: 20px;
+                            text-align: end;
+                        }
                     }
                 }
             }
